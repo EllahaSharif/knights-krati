@@ -1,10 +1,11 @@
+@Regression
 Feature: Security token verify API calls
 
   Background: Setup tests
-    Given  url "https://qa.insurance-api.tekschool-students.com"
-    Scenario: Send valid request to /api/token/verify
+    Given url BASE_URL
+  Scenario: Send valid request to /api/token/verify
     And path "/api/token"
-    And request {"username": "supervisor", "password" : "tek_supervisor"}
+    And request {"username": "supervisor","password": "tek_supervisor"}
     When method post
     Then status 200
     And print response
@@ -26,13 +27,12 @@ Feature: Security token verify API calls
     And assert response.errorMessage == "Token Expired or Invalid Token"
 
     #Activity Story 4)
- # Endpoint: /api/token/verify
- # Send invalid user and valid token.
- # Response status 400
-  #  And response contain message "Wrong username send along with Token"
-  Scenario: Send valid request to /api/token/verify
+#  Send invalid user and valid token.
+#  Response status 400
+#    And response contain message "Wrong username send along with Token"
+  Scenario: Send invalid username valid token to /api/token/verify
     And path "/api/token"
-    And request {"username": "supervisor", "password" : "tek_supervisor"}
+    And request {"username": "supervisor","password": "tek_supervisor"}
     When method post
     Then status 200
     And print response
@@ -43,8 +43,6 @@ Feature: Security token verify API calls
     Then status 400
     And print response
     And assert response.errorMessage == "Wrong Username send along with Token"
-
-
 
 
 

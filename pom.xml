@@ -5,9 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Knifghts-karate-framework</artifactId>
+    <artifactId>knights-karate-api-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
-
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -22,6 +21,23 @@
             <version>1.4.1</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 
+    <build>
+        <!-- Adding resource due to Karate recommendation  to change the default resources directory-->
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+    </build>
 </project>
