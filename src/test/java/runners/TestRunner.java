@@ -7,7 +7,7 @@ public class TestRunner {
     Karate run() {
         return Karate.run("classpath:features")
                 .tags("@End2End")
-                .karateEnv("qacd ");
+                .karateEnv("qa");
     }
 }
 
