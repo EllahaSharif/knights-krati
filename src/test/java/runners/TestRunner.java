@@ -6,8 +6,8 @@ public class TestRunner {
     @Karate.Test
     Karate run() {
         return Karate.run("classpath:features")
-                .tags("@Smoke ")
-                .karateEnv("dev");
+                .tags("@End2End")
+                .karateEnv("qacd ");
     }
 }
 

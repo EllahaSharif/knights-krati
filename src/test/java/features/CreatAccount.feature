@@ -16,7 +16,7 @@ Feature: Create Account Testing
     And request
     """
     {
-      "email": "mohammad_instructor123458@tekschool.us",
+      "email": "mohammad_instructor1236458@tekschool.us",
       "firstName": "Mohammad",
       "lastName": "Shokriyan",
       "title": "Mr.",
@@ -29,7 +29,7 @@ Feature: Create Account Testing
     When method post
     And print response
     Then status 201
-    And assert response.email == "mohammad_instructor123458@tekschool.us"
+    And assert response.email == "mohammad_instructor1236458@tekschool.us"
     * def createdAccountId = response.id
     Given path "/api/accounts/delete-account"
     And param primaryPersonId = createdAccountId
